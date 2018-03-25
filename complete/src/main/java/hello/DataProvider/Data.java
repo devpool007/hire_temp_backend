@@ -1,5 +1,9 @@
-package hello;
+package hello.DataProvider;
 
+
+import Model.Company;
+import Model.Messages;
+import Model.Student;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -33,6 +37,13 @@ public class Data {
             }
         }
         return null;
+    }
+
+    public static List<Company> getCompanies(){
+        List<Company> comp = new ArrayList<>();
+        comp.add(new Company("Apple","1","iPhone","https://image.freepik.com/free-icon/apple-logo_318-40184.jpg"));
+        comp.add(new Company("google","2","Pixel XL","https://cdn.vox-cdn.com/thumbor/Pkmq1nm3skO0-j693JTMd7RL0Zk=/0x0:2012x1341/1200x800/filters:focal(0x0:2012x1341)/cdn.vox-cdn.com/uploads/chorus_image/image/47070706/google2.0.0.jpg"));
+        return comp;
     }
 
 
