@@ -15,6 +15,12 @@ public class GreetingController {
     @GetMapping(value = "/getMessages")
     public ResponseEntity<List<Messages>> getMessages(){
         List<Messages> list = Data.getData();
+        try {
+            long time = 3000L;
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new IllegalStateException(e);
+        }
         return new ResponseEntity<List<Messages>>(list, HttpStatus.OK);
     }
 
@@ -27,6 +33,12 @@ public class GreetingController {
 
     @PostMapping(value = "/getCompanies")
     public ResponseEntity<List<Company>> getCompanies(){
+        try {
+            long time = 4000L;
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new IllegalStateException(e);
+        }
         List<Company> list = Data.getCompanies();
         return new ResponseEntity<>(list,list == null ? HttpStatus.BAD_REQUEST : HttpStatus.OK);
 
